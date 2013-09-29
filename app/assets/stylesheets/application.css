@@ -20,3 +20,7 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+.page-header .btn {
+	margin-top: 15px;
+}

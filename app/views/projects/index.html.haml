@@ -1,0 +1,25 @@
+.page-header
+  .row
+    .col-lg-8
+      %h3 Projects
+    .col-lg-4
+      .pull-right
+        = link_to 'New Project', new_project_path, :class => 'btn btn-default'
+
+- if @projects.count == 0
+  %p
+    There are no Projects yet. 
+    = link_to 'Create one', new_project_path
+- else
+  %table.table
+    %tr
+      %th Name
+      %th Description
+      %th
+      %th
+    - @projects.each do |project|
+      %tr
+        %td= link_to project.name, project
+        %td= project.description
+        %td= link_to 'Edit', edit_project_path(project)
+        %td= link_to 'Destroy', project, :method => :delete, :data => { :confirm => 'Are you sure?' }
