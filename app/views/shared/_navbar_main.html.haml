@@ -1,0 +1,9 @@
+%ul.nav.navbar-nav
+  %li.active= link_to 'Dashboard', dashboard_index_path
+  %li.dropdown
+    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+      Projects
+      %b.caret
+    %ul.dropdown-menu
+      %li
+        %a{:href => "#"} Tickets
