@@ -1,0 +1,22 @@
+.page-header
+  %h3= @project.name
+
+%p#notice= notice
+
+%ul.nav.nav-tabs
+  %li#show.active
+    %a{href: project_path(@project)} Overview
+  %li#settings
+    %a{href: project_settings_path(@project) } Settings
+  %li#members
+    %a{href: project_members_path(@project) } Members
+  %li#reports
+    %a{href: project_reports_path(@project) } Reports
+  %li#integrations
+    %a{href: project_integrations_path(@project) } Integrations
+
+:javascript
+  $(function(){
+    $('.nav-tabs li.active').removeClass('active');
+    $('.nav-tabs li##{params[:action]}').addClass('active');
+  });

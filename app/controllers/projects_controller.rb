@@ -80,4 +80,20 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def settings
+    @project = Project.find(params[:project_id])
+  end
+
+  def members
+    @project = Project.find(params[:project_id])
+  end
+
+  def reports
+    @project = Project.find(params[:project_id])
+  end
+
+  def integrations
+    @project = Project.find(params[:project_id])
+  end
 end

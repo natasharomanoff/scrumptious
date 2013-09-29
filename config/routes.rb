@@ -1,5 +1,10 @@
 Scrumptious::Application.routes.draw do
-  resources :projects
+  resources :projects do
+    get 'settings'
+    get 'members'
+    get 'reports'
+    get 'integrations'
+  end
 
 
   devise_for :users
