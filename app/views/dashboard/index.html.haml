@@ -1,2 +1,21 @@
 .page-header
   %h3 Dashboard
+
+.row
+  .col-lg-6.infobox
+    .infobox-hdr
+      %h4 My Projects
+      .list-group
+        - @projects.each do |p|
+          %a.list-group-item{href: project_path(p)}
+            %h4.list-group-item-heading= p.name
+            %p.list-group-item-text= p.description
+      %p
+        %a.btn.btn-primary.btn-block{href: projects_path } Show all my projects
+  
+  .col-lg-6.infobox
+    .infobox-hdr
+      %h4 Activity Feed
+    %p This is your activity feed. It will show you the latest activity within your projects.
+    %p
+      %a.btn.btn-default{href: "#"} View details »

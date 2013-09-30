@@ -24,3 +24,20 @@ body {
 .page-header .btn {
 	margin-top: 15px;
 }
+
+.infobox {
+
+}
+
+.infobox-hdr {
+  padding-bottom: 2px;
+  margin: 20px 0 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.infobox-hdr h4 {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  color: #bbb;
+}
