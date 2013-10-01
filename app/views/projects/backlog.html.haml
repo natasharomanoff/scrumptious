@@ -1,0 +1,45 @@
+= render 'header'
+
+
+.row
+  .col-lg-8.infobox
+    .infobox-hdr
+      %h4 Backlog
+    - if @project.backlog.stories.count == 0 
+      .alert.alert-info There are currently no stories in the backlog.      
+      %a.btn.btn-default{href: "#"} View details »
+    - else
+      .list-group
+        - @project.backlog.stories.each do |story|
+          %a.list-group-item{href: "#"}
+            %p.list-group-item-text= story.title
+  
+  .col-lg-4.infobox
+    .infobox-hdr
+      %h4 Actions
+    %p
+      %a.btn.btn-primary.btn-sm.btn-block{href: "#", "data-toggle" => "modal", "data-target" => "#story-modal"} Create Story
+      %a.btn.btn-primary.btn-sm.btn-block{href: "#"} Create Epic
+      %a.btn.btn-primary.btn-sm.btn-block{href: "#"} Create Sprint
+
+
+.modal#story-modal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title Create Story
+      .modal-body
+        = form_for( [@project, Story.new], :html => {:class => 'form-horizontal', :role => 'form'} )do |f|
+          .form-group
+            = f.label :title, :class => 'col-lg-2 control-label'
+            .col-lg-10
+              = f.text_field :title, :class => 'form-control'
+          .form-group
+            = f.label :point, :class => 'col-lg-2 control-label'
+            .col-lg-10
+              = f.text_field :point, :class => 'form-control'
+          .form-group
+            .col-lg-offset-2.col-lg-10
+              = f.submit 'Save', :class => 'btn btn-primary'
+              %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel

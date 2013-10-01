@@ -96,4 +96,8 @@ class ProjectsController < ApplicationController
   def integrations
     @project = Project.find(params[:project_id])
   end
+
+  def backlog
+    @project = Project.find(params[:project_id])
+  end
 end

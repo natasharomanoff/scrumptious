@@ -4,6 +4,8 @@ Scrumptious::Application.routes.draw do
     get 'members'
     get 'reports'
     get 'integrations'
+    get 'backlog'
+    resources :stories
   end
 
 
