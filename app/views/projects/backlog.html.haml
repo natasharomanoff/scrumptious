@@ -11,8 +11,10 @@
     - else
       .list-group
         - @project.backlog.stories.each do |story|
-          %a.list-group-item{href: "#"}
-            %p.list-group-item-text= story.title
+          %a.list-group-item{href: project_story_path(@project, story)}
+            %p.list-group-item-text
+              .badge= story.point
+              = story.title
   
   .col-lg-4.infobox
     .infobox-hdr
