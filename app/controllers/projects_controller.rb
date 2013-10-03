@@ -100,4 +100,8 @@ class ProjectsController < ApplicationController
   def backlog
     @project = Project.find(params[:project_id])
   end
+
+  def sprints
+    @project = Project.find(params[:project_id])
+  end
 end
