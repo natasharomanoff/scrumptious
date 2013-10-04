@@ -12,6 +12,8 @@ Scrumptious::Application.routes.draw do
 
   devise_for :users
 
+  resource :profiles
+
   get "dashboard/index"
 
   # The priority is based upon order of creation:

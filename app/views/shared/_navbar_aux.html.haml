@@ -5,8 +5,8 @@
       %b.caret
     %ul.dropdown-menu
       %li
-        %a{:href => "#"} Profile
+        %a{:href => profiles_path(current_user)} Profile
       %li
-        %a{:href => "#"} Manage Profile
+        %a{:href => edit_profiles_path(current_user)} Manage Profile
       %li.divider
       %li= link_to('Logout', destroy_user_session_path, :method => :delete)

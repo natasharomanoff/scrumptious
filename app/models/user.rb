@@ -3,11 +3,11 @@ class User
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""
@@ -40,4 +40,6 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+
+  field :name, :type => String, :default => ""
 end
