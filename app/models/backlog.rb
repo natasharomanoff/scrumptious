@@ -3,5 +3,6 @@ class Backlog
   field :title, type: String
 
   has_many :stories
+  has_many :epics
   embedded_in :project
 end

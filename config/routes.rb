@@ -7,6 +7,7 @@ Scrumptious::Application.routes.draw do
     get 'backlog'
     get 'sprints'
     resources :stories
+    resources :epics
   end
 
 
